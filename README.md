@@ -2,7 +2,7 @@
 Projecto en React-Native para ACM Uninorte
 
 Hola! Este es el repositorio del proyecto que creamos en el taller del jueves 21 de octubre.
-Siéntete libre de clonar el repositorio y jugar con los componentes.
+Siéntete libre de clonar y jugar con los componentes.
 
 Aquí te dejo un pequeño resumen de la estructura del projecto:
 - **components**: componentes reutilizables del proyecto. Inputs, botones, etc.
