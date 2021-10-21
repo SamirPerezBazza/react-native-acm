@@ -1,6 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
+/**
+ * 
+ * @param {string} title Texto para desplegar como título
+ * @returns Componente reutilizable
+ */
 const Header = ({ title = "" }) => {
   return (
     <View style={styles.headerContainer}>

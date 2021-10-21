@@ -6,19 +6,24 @@ import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
 import { useRoute } from '@react-navigation/core';
 
+//Componente de creación de una tarea
 const NewTask = ({ navigation }) => {
 
+  //Controlamos los parámetros a través del hook useState
   const [name, setName] = useState("")
   const [desc, setDesc] = useState("")
 
+  //useRoute es un hook que nos permite acceder a los parámetros que el componente recibe por las rutas
   const route = useRoute();
 
+  //Función encargada de la navegación
   const goToHome = () => navigation.navigate("Home")
 
+  //Función encargada de guardar una tarea en la lista
   const saveTodo = () => {
-    console.log("NAME=>", name);
-    console.log("DESC=>", desc);
-    route.params.setTodoList(prev => prev.concat({ name: name, desc: desc }))
+    //Aquí usamos el objeto "route" para acceder a los parámetros de la ruta, donde encontramos la función "setTodoList".
+    //Esta viene del useState en Home.
+    route.params.setTodoList(prev => prev.concat({ name: name, desc: desc, finished: false }))
     goToHome();
   }
 

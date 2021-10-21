@@ -1,18 +1,31 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { BsCheck2 } from "react-icons/bs";
+/**
+ * 
+ * @param {string} name nombre de la tarea
+ * @param {string} desc descripción de la tarea
+ * @returns componente reutilizable
+ */
+const Item = ({ name, desc, finished, todoList, setTodoList }) => {
 
-const Item = ({ name, desc }) => {
-  const [checked, setChecked] = useState(false)
+  const handlePress = () => {
+    let temp = todoList.slice();
+    temp.forEach(element => {
+      if (element.name === name)
+        element.finished = !element.finished
+    });
+    setTodoList(temp);
+  }
 
   return (
     <View style={styles.itemContainer}>
       <TouchableOpacity
-        style={[styles.checkBox, { backgroundColor: !checked ? "#FFF" : "black" }]}
-        onPress={() => setChecked(prev => !prev)}
+        style={[styles.checkBox, { backgroundColor: !finished ? "#FFF" : "black" }]}
+        onPress={handlePress}
       >
         {
-          checked && <BsCheck2 color="#FFF" />
+          finished && <BsCheck2 color="#FFF" />
         }
       </TouchableOpacity>
       <View style={styles.dataContainer}>

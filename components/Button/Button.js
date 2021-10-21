@@ -1,6 +1,14 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 
+/**
+ * 
+ * @param {function} handlePress función que maneja el evento del TochableOpacity
+ * @param {component} Icon Componente de ícono
+ * @param {string} colorIcon color en hex
+ * @param {object} style objeto con las propiedades de los estilos
+ * @returns Componente reutilizable
+ */
 const Button = ({ handlePress, Icon, colorIcon = "#FFF", style }) => {
   return (
     <TouchableOpacity
